@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<permissions>
+		<title>Cấu hình chung</title>
+		<item>
+			<param>backend/system/general/index</param>
+			<description>Xem toàn bộ</description>
+		</item>
+		<item>
+			<param>backend/system/general/translator</param>
+			<description>Xem bản dịch</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Nội dung cố định</title>
+		<item>
+			<param>backend/content/general/index</param>
+			<description>Xem toàn bộ</description>
+		</item>
+		<item>
+			<param>backend/content/general/translator</param>
+			<description>Xem bản dịch</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Quản lý - Widget</title>
+		<item>
+			<param>backend/widget/widget/index</param>
+			<description>Xem Danh sách widget</description>
+		</item>
+		<item>
+			<param>backend/widget/widget/create</param>
+			<description>Thêm mới Widget</description>
+		</item>
+		<item>
+			<param>backend/widget/widget/store</param>
+			<description>Sửa Widget</description>
+		</item>
+	</permissions>
+</module>

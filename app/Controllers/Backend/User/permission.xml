@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<permissions>
+		<title>Ngôn Ngữ</title>
+		<item>
+			<param>backend/language/language/index</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>backend/language/language/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>backend/language/language/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>backend/language/language/delete</param>
+			<description>Xóa</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Nhóm - [Thành viên]</title>
+		<item>
+			<param>backend/user/catalogue/index</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>backend/user/catalogue/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>backend/user/catalogue/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>backend/user/catalogue/delete</param>
+			<description>Xóa</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Tài khoản - [Thành viên]</title>
+		<item>
+			<param>backend/user/user/index</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>backend/user/user/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>backend/user/user/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>backend/user/user/delete</param>
+			<description>Xóa</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Quản lý - [Bản dịch]</title>
+		<item>
+			<param>backend/slide/translate/translate</param>
+			<description>Bản dịch slide</description>
+		</item>
+		<item>
+			<param>backend/translate/translate/translateobject</param>
+			<description>Bản dịch bài viết</description>
+		</item>
+		<item>
+			<param>backend/translate/translate/translateproduct</param>
+			<description>Bản dịch sản phẩm</description>
+		</item>
+		<item>
+			<param>backend/translate/translate/translatetour</param>
+			<description>Bản dịch tour</description>
+		</item>
+		<item>
+			<param>backend/translate/translate/translatecontact</param>
+			<description>Bản dịch liên hệ</description>
+		</item>
+		<item>
+			<param>backend/translate/translate/translateattributecatalogue</param>
+			<description>Bản dịch nhóm thuộc tính</description>
+		</item>
+		<item>
+			<param>backend/translate/translate/translateattribute</param>
+			<description>Bản dịch thuộc tính</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Upload</title>
+		<item>
+			<param>All</param>
+			<description>Toàn quyền</description>
+		</item>
+		<item>
+			<param>folderView</param>
+			<description>Xem Folder</description>
+		</item>
+		<item>
+			<param>folderCreate</param>
+			<description>Thêm Folder</description>
+		</item>
+		<item>
+			<param>folderRename</param>
+			<description>Đổi tên Folder</description>
+		</item>
+		<item>
+			<param>folderDelete</param>
+			<description>Xóa Folder</description>
+		</item>
+		<item>
+			<param>fileView</param>
+			<description>Xem File</description>
+		</item>
+		<item>
+			<param>fileUpload</param>
+			<description>Upload File</description>
+		</item>
+		<item>
+			<param>fileRename</param>
+			<description>Đổi tên File</description>
+		</item>
+		<item>
+			<param>fileDelete</param>
+			<description>Xóa File</description>
+		</item>
+	</permissions>
+</module>

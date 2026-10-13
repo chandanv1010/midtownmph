@@ -1,0 +1,128 @@
+#article_detail_page{
+    padding-top:70px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100% !important;
+    border:1px solid #ddd;
+}
+
+  table th, table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  table th {
+    background-color: #f2f2f2;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  table tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  .sologan-1 .txt_center{
+    display: block !important;
+  }
+
+  .dt_desc_catalogue table{
+    min-width:100% !important;
+  }
+
+  .overview-panel .overview-body .location .description img{
+    width:100% !important;
+    height:auto !important;
+  }
+
+  @media (max-width: 600px){
+    .sologan img,
+    .sologan-1 img{
+      width:100% !important;
+      height:auto !important;
+    }
+  }
+
+  .sologan{
+    display: block !important;
+    text-align: justify !important;
+  }
+
+  .txt_center table{
+    width:100% !important;
+  }
+
+  
+  
+.floor .cat_heading_1{
+    padding-top: 110px;
+}
+#article_detail_page {
+    padding-top: 100px !important;
+}
+.extract_album .album-item .image{
+    height: 250px;
+    border-radius: 4px;
+}
+.extract_album .album-item .image img{
+    border-radius: 4px;
+}
+.extract_album h3.heading-2{
+    line-height: 22px;
+}
+.extract_album h3.heading-2 > *{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+.list-album{
+    margin-bottom: 30px;
+}
+.floor .image{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.floor .dt_item_title_2 {
+    font-size: 15px;
+}
+@media (max-width: 600px){
+    table{
+        width:100% !important;
+    }
+    .dt_item_desc_1 img{
+        width:100% !important;
+        height: auto !important;
+    }
+    .dt_item_desc_1 iframe{
+        height: 500px !important;
+    }
+}
+
+@media (max-width: 768px){
+    .search_product_panel input,
+    .search_product_panel textarea{
+        font-size:17px !important;
+    }
+}
+
+.btn-toggle{
+    /* background: linear-gradient(to bottom, rgb(255 255 255 / 0%), rgb(255 255 255 / 79%), rgb(255 255 255));
+    bottom: 46px;
+    height: 211px;
+    left: 0;
+    position: absolute;
+    width: 100%; */
+    color:#94182b !important;
+    position: relative;
+    z-index: 3;
+}
+.sologan-1{
+    margin-bottom:30px;
+}
+.blur{
+    z-index: 2;
+}

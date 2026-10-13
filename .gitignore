@@ -1,0 +1,23 @@
+# Thu vien composer - chay `composer install` la co lai
+/vendor/
+
+# CI4 sinh ra luc chay, khong thuoc ve source
+/writable/cache/*
+/writable/logs/*
+/writable/session/*
+/writable/debugbar/*
+/writable/uploads/*
+!/writable/*/.gitkeep
+
+# File nguoi dung tai len (3.9GB tren server) - dong bo rieng bang rsync
+/upload/
+
+# CHUA MAT KHAU DATABASE - dung bao gio commit
+/config.php
+
+# He dieu hanh va IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

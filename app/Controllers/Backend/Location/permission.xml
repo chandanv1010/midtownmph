@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<permissions>
+		<title>Nhóm - [Vị trí]</title>
+		<item>
+			<param>backend/location/catalogue/index</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>backend/location/catalogue/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>backend/location/catalogue/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>backend/location/catalogue/delete</param>
+			<description>Xóa</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Danh sách - [Vị trí]</title>
+		<item>
+			<param>backend/location/location/index</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>backend/location/location/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>backend/location/location/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>backend/location/location/delete</param>
+			<description>Xóa</description>
+		</item>
+	</permissions>
+</module>

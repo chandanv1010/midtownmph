@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<permissions>
+		<title>Quản lý - [Menu]</title>
+		<item>
+			<param>backend/menu/menu/index</param>
+			<description>Xem chi tiết menu</description>
+		</item>
+		<item>
+			<param>backend/menu/menu/listmenu</param>
+			<description>Xem danh sách menu</description>
+		</item>
+		<item>
+			<param>backend/menu/menu/createmenu</param>
+			<description>Tạo mới menu</description>
+		</item>
+		<item>
+			<param>backend/menu/menu/create</param>
+			<description>Chỉnh sửa menu</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>Quản lý - [Giao diện]</title>
+		<item>
+			<param>backend/panel/panel/index</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>backend/panel/panel/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>backend/panel/panel/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>backend/panel/panel/delete</param>
+			<description>Xóa</description>
+		</item>
+	</permissions>
+</module>

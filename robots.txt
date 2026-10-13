@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /backend
+Disallow: /backend/*
+Disallow: /tag.html
+Disallow: /tag.html/*
+Disallow: /?keyword
+Disallow: /?keyword=*
+Disallow: /send_contact
+Disallow: /send_contact/*
+Disallow: /?debugbar_time
+Disallow: /?debugbar_time=*
+Sitemap: https://midtownpmh.com/sitemap.xml
+Host: https://midtownpmh.com/
