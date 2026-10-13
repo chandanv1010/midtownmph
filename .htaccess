@@ -1,4 +1,14 @@
 RewriteEngine On
+
+# Chan truy cap .git va cac file cau hinh an qua web.
+# Luat nay phai dat TRUOC cac luat ben duoi: luat rewrite phia sau chi chuyen
+# huong khi file KHONG ton tai (!-f), nen moi file co that deu duoc phuc vu
+# thang. Khong chan thi /.git/config tai ve duoc, va tu do dump nguoc ca ma
+# nguon lan lich su commit.
+RewriteRule ^(.*/)?\.git(/|$) - [F,L]
+RewriteRule ^(.*/)?\.env(/|$) - [F,L]
+RewriteRule ^config\.php$ - [F,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
