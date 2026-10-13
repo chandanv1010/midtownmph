@@ -574,6 +574,85 @@ if (! function_exists('get_catalogue_object')){
 }
 
 
+if (! function_exists('language_switcher')){
+	/**
+	 * Sinh cac the <a> cua nut chuyen ngon ngu.
+	 *
+	 * Truoc day moi noi dat nut deu viet cung ba the <a> cho vi/en/tq, kem ba
+	 * bien $active_vi/$active_en/$active_tq. Rieng header.php lap lai hai lan
+	 * (ban desktop va ban mobile), offcanvas.php mot lan nua - tong cong bon
+	 * cho phai sua moi khi them mot ngon ngu, va quen mot cho la nguoi dung
+	 * khong bam sang ngon ngu do duoc.
+	 *
+	 * Nay danh sach lay tu bang `language` (admin bat/tat bang cot publish),
+	 * con nhan va tooltip lay tu khoa _LANG_LABEL / _LANG_TITLE trong chinh
+	 * file ngon ngu tuong ung. Them ngon ngu = them hang trong admin + them
+	 * thu muc app/Language/<ma>/, khong dung toi markup.
+	 *
+	 * @param string $currentLocale Ma ngon ngu dang xem, de danh dau 'active'.
+	 * @return string HTML cac the <a>, hoac chuoi rong neu khong co du lieu.
+	 */
+	function language_switcher(string $currentLocale = ''): string
+	{
+		$languages = get_all_language();
+		if (!is_array($languages) || !count($languages)) {
+			return '';
+		}
+
+		// Chi hien ngon ngu da khai bao trong App::$supportedLocales. Thieu
+		// buoc nay thi mot hang thua trong bang `language` se sinh ra link 404.
+		$supported = config('App')->supportedLocales;
+
+		$html = '';
+		foreach ($languages as $row) {
+			$code = $row['canonical'] ?? '';
+			if ($code === '' || !in_array($code, $supported, true)) {
+				continue;
+			}
+
+			$html .= '<a href="' . base_url($code) . '"'
+				. ' title="' . esc(lang('app._LANG_TITLE', [], $code), 'attr') . '"'
+				. ' class="' . (($code === $currentLocale) ? 'active' : '') . '">'
+				. esc(lang('app._LANG_LABEL', [], $code))
+				. '</a>';
+		}
+
+		return $html;
+	}
+}
+if (! function_exists('flag_by_code')){
+	/**
+	 * Doi danh sach ngon ngu thanh bang tra cuu: ma ngon ngu => anh co.
+	 *
+	 * Truoc day cac view ban dich lay co theo VI TRI trong mang:
+	 *     $flag[0] cho 'vi', $flag[1] cho 'en', $flag[2] cho 'tq'
+	 * kem mot chuoi ternary long nhau de chon. Cach do hong theo hai kieu:
+	 *   - Them ngon ngu moi (kr, jp) thi khong co nhanh nao khop, co bien mat.
+	 *   - Doi thu tu hay xoa mot hang trong bang `language` thi lech het co.
+	 *
+	 * Tra theo ma ngon ngu thi khong phu thuoc thu tu, va them bao nhieu ngon
+	 * ngu cung khong phai sua lai view.
+	 *
+	 * @param array $languageList Ket qua truy van bang `language`, moi phan tu
+	 *                            can co khoa 'canonical' va 'image'.
+	 * @return array Mang dang ['vi' => 'anh-co-vi.png', 'kr' => '...']
+	 */
+	function flag_by_code($languageList): array
+	{
+		if (!is_array($languageList)) {
+			return [];
+		}
+
+		$map = [];
+		foreach ($languageList as $row) {
+			if (isset($row['canonical'])) {
+				$map[$row['canonical']] = $row['image'] ?? '';
+			}
+		}
+
+		return $map;
+	}
+}
 if (! function_exists('get_list_language')){
 	function get_list_language(array $param = []){
 		$model = new AutoloadModel();

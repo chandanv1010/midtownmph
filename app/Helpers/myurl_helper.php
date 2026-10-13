@@ -29,10 +29,24 @@ if(!function_exists('rewrite_url')){
 
 if(!function_exists('write_url')){
 	function write_url($canonical = '', $suffix = TRUE, $fulllink = FALSE){
+		if (empty($canonical)) {
+			return;	// giu nguyen hanh vi cu: canonical rong thi khong tra ve gi
+		}
+
 		$locale = request()->getLocale();
-		// echo $locale;
-		$domain = ($fulllink == TRUE)?BASE_URL:'';
-		if(!empty($canonical)) return ($suffix == TRUE)?($domain.( ($locale == 'vi') ? '' : $locale.'/' ).$canonical.HTSUFFIX):($domain.(($locale == 'vi') ? '' : $locale.'/' ).$canonical);
+		$domain = ($fulllink == TRUE) ? BASE_URL : '';
+
+		/* Ngon ngu mac dinh khong co tien to trong URL:
+		 *     vi => /lien-he.html
+		 *     kr => /kr/lien-he.html
+		 *
+		 * Truoc day so sanh cung chuoi 'vi'. Nay lay tu App::$defaultLocale,
+		 * nen doi ngon ngu mac dinh khong phai sua lai ham nay - va khong con
+		 * mot ma ngon ngu nao viet cung trong helper.
+		 */
+		$prefix = ($locale === config('App')->defaultLocale) ? '' : $locale . '/';
+
+		return $domain . $prefix . $canonical . (($suffix == TRUE) ? HTSUFFIX : '');
 	}
 }
 

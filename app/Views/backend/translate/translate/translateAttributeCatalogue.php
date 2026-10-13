@@ -3,8 +3,14 @@
     $baseController = new App\Controllers\BaseController();
     $currentLanguage = $baseController->currentLanguage();
     $languageList = get_list_language(['currentLanguage' => $language]);
- 	$currentText = (($currentLanguage == 'vi') ? $flag[0]['image'] : (($currentLanguage == 'en') ? $flag[1]['image'] : ($currentLanguage == 'tq') ? $flag[2]['image'] : ''));
-	 $text = (($language == 'vi') ? $flag[0]['image']: (($language == 'en') ? $flag[1]['image'] : (($language == 'tq') ? $flag[2]['image'] : '')));
+	/* Lay co theo MA ngon ngu, khong theo vi tri trong mang.
+	 * Ban cu dung $flag[0]/$flag[1]/$flag[2] kem ternary long nhau: them ngon
+	 * ngu moi (kr, jp) la khong nhanh nao khop nen mat co, con doi thu tu hang
+	 * trong bang `language` thi lech het co. Xem flag_by_code() o mydata_helper.
+	 */
+	$flagByCode  = flag_by_code($flag);
+	$currentText = $flagByCode[$currentLanguage] ?? '';
+	$text        = $flagByCode[$language] ?? '';
 
 ?>
 

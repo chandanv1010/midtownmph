@@ -73,4 +73,9 @@
         'BTN_CANCEL' => 'Cancel',
         'NO_RESULT' => 'No results found!',
         'newTitle' => 'News',
+        'BTN_EXPAND' => 'Read more ▼',
+        'BTN_MINIMIZE' => 'Minimize ▲',
+        '_LANG_LABEL' => 'EN',
+        '_LANG_TITLE' => 'English',
+        'SEARCH_PLACEHOLDER' => 'Search...',
     ];

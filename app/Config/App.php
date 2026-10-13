@@ -88,7 +88,16 @@ class App extends BaseConfig
 	| found, the first locale will be used.
 	|
 	*/
-	public $supportedLocales = ['en','cn','vi','tq'];
+	/*
+	 * Moi ma o day phai co thu muc tuong ung trong app/Language/<ma>/.
+	 * Thieu thu muc thi trang van mo duoc nhung chu se hien ra ten khoa
+	 * (vi du "app.PRD_PRICE") thay vi chu that.
+	 *
+	 * Luu y: 'cn' dang duoc khai bao nhung KHONG co app/Language/cn/ va
+	 * khong cho nao trong code dung toi. De lai de khong doi hanh vi URL
+	 * cu, nhung nen ra soat va go neu that su khong dung.
+	 */
+	public $supportedLocales = ['en','cn','vi','tq','kr','jp'];
 
 	/*
 	|--------------------------------------------------------------------------

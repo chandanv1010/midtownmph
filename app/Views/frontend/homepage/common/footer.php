@@ -300,32 +300,17 @@
 
 
 <script>
-   const language = '<?php echo request()->getLocale(); ?>';
-    let expand, minimize;
-
-    switch (language) {
-        case 'vi':
-            expand = 'Xem thêm ▼';
-            minimize = 'Thu gọn ▲';
-            break;
-
-        case 'en':
-            expand = 'Read more ▼';
-            minimize = 'Minimize ▲';
-            break;
-
-        case 'tq': // hoặc 'cn' nếu bạn dùng mã khác cho tiếng Trung
-            expand = '查看更多 ▼';
-            minimize = '最小化 ▲';
-            break;
-
-        default:
-            expand = 'Read more ▼';   // fallback mặc định
-            minimize = 'Minimize ▲';
-    }
-
-    console.log(expand, minimize);
-    
-    
+    /* Chu cho nut "xem them / thu gon" trong public/frontend/resources/function.js.
+     *
+     * Truoc day cho nay la mot switch liet ke tung ngon ngu, nen them ngon ngu
+     * moi la phai sua them mot case - va quen thi nguoi dung thay tieng Anh.
+     * Nay lay thang tu app/Language/<ma>/app.php: them ngon ngu chi can them
+     * thu muc ngon ngu, khong dung toi file nay nua.
+     *
+     * json_encode lo viec escape dau nhay va ky tu dac biet, an toan hon la
+     * noi chuoi bang tay vao JavaScript.
+     */
+    const expand   = <?= json_encode(lang('app.BTN_EXPAND'), JSON_UNESCAPED_UNICODE) ?>;
+    const minimize = <?= json_encode(lang('app.BTN_MINIMIZE'), JSON_UNESCAPED_UNICODE) ?>;
 
 </script>

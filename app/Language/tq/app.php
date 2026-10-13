@@ -73,5 +73,9 @@
         'BTN_CANCEL' => '取消',
         'NO_RESULT' => '未找到结果!',
         'newTitle' => '消息!',
-        
+        'BTN_EXPAND' => '查看更多 ▼',
+        'BTN_MINIMIZE' => '最小化 ▲',
+        '_LANG_LABEL' => '中文',
+        '_LANG_TITLE' => 'China',
+        'SEARCH_PLACEHOLDER' => '搜索...',
     ];

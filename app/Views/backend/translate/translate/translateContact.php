@@ -3,8 +3,15 @@
     $baseController = new App\Controllers\BaseController();
     $currentLanguage = $baseController->currentLanguage();
     $languageList = get_list_language(['currentLanguage' => $language]);
- 	$currentText = (($currentLanguage == 'vi') ? $flag[1]['image']: (($currentLanguage == 'en') ? $flag[1]['image'] : ($currentLanguage == 'jp') ? $flag[2]['image'] : ''));
-	 $text = (($language == 'vi') ? $flag[1]['image']: (($language == 'en') ? $flag[0]['image'] : (($language == 'jp') ? $flag[2]['image'] : '')));
+	/* Lay co theo MA ngon ngu, khong theo vi tri trong mang.
+	 *
+	 * Ban cu o file nay con sai san: dong tren cho ca 'vi' lan 'en' deu lay
+	 * $flag[1], dong duoi lai dao 'vi' => [1] va 'en' => [0]. Nghia la co Viet
+	 * va co Anh dang hien lan nhau. Tra theo ma ngon ngu sua luon loi do.
+	 */
+	$flagByCode  = flag_by_code($flag);
+	$currentText = $flagByCode[$currentLanguage] ?? '';
+	$text        = $flagByCode[$language] ?? '';
 
 ?>
 

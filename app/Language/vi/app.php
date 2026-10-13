@@ -73,4 +73,13 @@
         'BTN_CANCEL' => 'Huỷ',
         'NO_RESULT' => 'Không tìm thấy kết quả!',
         'newTitle' => 'Tin tức',
+        'BTN_EXPAND' => 'Xem thêm ▼',
+        'BTN_MINIMIZE' => 'Thu gọn ▲',
+
+        /* Nhan va tooltip cua chinh ngon ngu nay tren nut chuyen ngon ngu.
+         * Moi ngon ngu tu khai bao o file cua minh, nen them ngon ngu moi
+         * khong phai sua markup header/offcanvas nua. */
+        '_LANG_LABEL' => 'VI',
+        '_LANG_TITLE' => 'Tiếng Việt',
+        'SEARCH_PLACEHOLDER' => 'Tìm kiếm...',
     ];

@@ -71,16 +71,12 @@
 				<?php endif ?>
 
 				<?php
-					// $detect_language = fe_currentLanguage();
-					// print_r($detect_language); exit;
-					$active_vi = ($language == 'vi')? 'active' : '';
-					$active_en = ($language == 'en')? 'active' : '';
-					$active_tq = ($language == 'tq')? 'active' : '';
-			 	?>
+					/* Nut chuyen ngon ngu sinh tu du lieu, khong viet cung nua.
+					 * Xem language_switcher() trong app/Helpers/mydata_helper.php. */
+					$languageLinks = language_switcher($language);
+				?>
 				<div class="uk-flex uk-flex-middle dt_language">
-			        <a href="<?php echo base_url('vi') ?>" title="Tiếng Việt" class="<?php echo $active_vi ?>" >VI</a>
-			        <a href="<?php echo base_url('en') ?>" class="<?php echo $active_en ?>" title="English">EN</a>
-					<a href="<?php echo base_url('tq') ?>" class="<?php echo $active_tq ?>" title="China">中文</a>
+					<?php echo $languageLinks ?>
 				</div>
 			</div>
 		</div>
@@ -94,9 +90,7 @@
  			<span>Menu</span>
  		</a>
 		<div class="uk-flex uk-flex-middle uk-flex-center dt_language ">
-	        <a href="<?php echo base_url('vi') ?>" title="Tiếng Việt" class="<?php echo $active_vi ?>" >VI</a>
-	        <a href="<?php echo base_url('en') ?>" class="<?php echo $active_en ?>" title="English">EN</a>
-			<a href="<?php echo base_url('tq') ?>" class="<?php echo $active_tq ?>" title="China">中文</a>
+			<?php echo $languageLinks ?>
 		</div>
 		<div class="hd-filter">
 			<a href="#my-id" data-uk-modal><i class="fa fa-search" aria-hidden="true"></i></a>

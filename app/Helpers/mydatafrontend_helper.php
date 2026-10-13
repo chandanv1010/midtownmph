@@ -125,10 +125,18 @@ if(!function_exists('logo')){
         }
         $actual_link = $http."$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $system = get_general();
+
+        /* Logo tro ve trang chu cua dung ngon ngu dang xem. Ngon ngu mac dinh
+         * khong co tien to nen de rong, cac ngon ngu khac tro ve /<ma>/.
+         * Truoc day bieu thuc nay viet cung chuoi 'vi' va bi lap lai o ca hai
+         * nhanh if/else - tinh mot lan o day cho khoi lech nhau.
+         */
+        $homeUrl = ($locale === config('App')->defaultLocale) ? '' : base_url($locale);
+
         if($actual_link == BASE_URL){
-            $logo = '<h1 class="hd-logo" ><a href="'.(($locale == 'vi') ? '' : base_url($locale)).'" title="'.$system['seo_meta_title'].'"><img src="'.$system['homepage_logo'].'" alt="'.$system['seo_meta_title'].'"  class="lazyloading" /></a><span class="uk-hidden">'.$system['seo_meta_title'].'</span></h1>';
+            $logo = '<h1 class="hd-logo" ><a href="'.$homeUrl.'" title="'.$system['seo_meta_title'].'"><img src="'.$system['homepage_logo'].'" alt="'.$system['seo_meta_title'].'"  class="lazyloading" /></a><span class="uk-hidden">'.$system['seo_meta_title'].'</span></h1>';
         }else{
-            $logo = '<div class="hd-logo" ><a  href="'.(($locale == 'vi') ? '' : base_url($locale)).'" title="'.$system['seo_meta_title'].'"><img src="'.$system['homepage_logo'].'" alt="'.$system['seo_meta_title'].'" class="lazyloading" /></a></div>';
+            $logo = '<div class="hd-logo" ><a  href="'.$homeUrl.'" title="'.$system['seo_meta_title'].'"><img src="'.$system['homepage_logo'].'" alt="'.$system['seo_meta_title'].'" class="lazyloading" /></a></div>';
         }
         return $logo;
     }

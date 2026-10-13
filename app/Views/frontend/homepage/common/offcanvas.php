@@ -3,12 +3,15 @@
 $baseController = new App\Controllers\FrontendController();
     $language = request()->getLocale();
 $main_nav = get_menu(array('keyword' => 'main-menu','language' => $language , 'output' => 'array')); 
-$homepage = ($language == 'en') ? 'HOMEPAGE' : ( ($language == 'tq') ? '主页' : 'Trang chủ' ); 
+/* Truoc day dong nay la ternary long nhau liet ke tung ngon ngu, nen them
+ * ngon ngu moi la roi ve tieng Viet. Khoa HOME da co san trong moi file
+ * app/Language/<ma>/app.php voi dung cac chu cu. */
+$homepage = lang('app.HOME');
 ?>
 <div id="offcanvas" class="uk-offcanvas offcanvas">
 	<div class="uk-offcanvas-bar">
 		<form class="uk-search" action="<?php echo site_url('tim-kiem'); ?>" data-uk-search="{}">
-		    <input class="uk-search-field" type="search" name="keyword" placeholder="Tìm kiếm...">
+		    <input class="uk-search-field" type="search" name="keyword" placeholder="<?php echo esc(lang('app.SEARCH_PLACEHOLDER'), 'attr') ?>">
         </form>
 		<ul class="l1 uk-nav uk-nav-offcanvas uk-nav uk-nav-parent-icon mb20" data-uk-nav>
 			<li class="l1 ">
@@ -58,17 +61,12 @@ $homepage = ($language == 'en') ? 'HOMEPAGE' : ( ($language == 'tq') ? '主页' 
 			    <?php } ?>
 			</div>
 		<?php endif ?>
-		<?php
-			$detect_language = fe_currentLanguage();
-			// print_r($detect_language); exit;
-			$active_vi = ($detect_language == 'vi')? 'active' : '';
-			$active_en = ($detect_language == 'en')? 'active' : '';
-			$active_tq = ($detect_language == 'tq')? 'active' : '';
-	 	?>
 		<div class="uk-flex uk-flex-middle uk-flex-center mb20 dt_language">
-	        <a href="<?php echo base_url('vi') ?>" title="Tiếng Việt" class="<?php echo $active_vi ?>">VI</a>
-	        <a href="<?php echo base_url('en') ?>" class="<?php echo $active_en ?>" title="English" >EN</a>
-			<a href="<?php echo base_url('tq') ?>" class="<?php echo $active_tq ?>" title="China">中文</a>
+			<?php
+				/* Sinh tu du lieu thay cho ba the <a> viet cung truoc day.
+				 * Xem language_switcher() trong app/Helpers/mydata_helper.php. */
+				echo language_switcher(fe_currentLanguage());
+			?>
 		</div>
  		<div class="text-white mb15 uk-text-center">Hotline: <a href="tel: <?php echo $general['contact_hotline'] ?>" title="" class="text-white  "><?php echo $general['contact_hotline'] ?></a></div>
  		<div class="wrap_social mb15 ">
