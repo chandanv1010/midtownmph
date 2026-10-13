@@ -122,7 +122,9 @@
                                                         $baseController = new App\Controllers\FrontendController();
                                                         $language = request()->getLocale();
                                                     ?>
-                                                     <?php $en_string = ($language == 'vi') ? '/ tháng'  : '/ month'  ?>
+                                                     <?php /* Truoc day: ternary 'vi' => '/ tháng', con lai '/ month'. Khoa PER
+                                                             da co du 5 ngon ngu nen khong phai liet ke tung ma nua. */ ?>
+                                                     <?php $en_string = '/ ' . lang('app.PER') ?>
                                                      <div class="title"><?php echo dt_render_currency($price); ?> <?php echo (isset($val['id']) && $val['id'] == 18 ) ? $en_string : ''; ?> </div>
                                                 </div>
                                             </div>

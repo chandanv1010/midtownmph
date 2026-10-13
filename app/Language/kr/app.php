@@ -91,4 +91,8 @@
         '_LANG_LABEL' => 'KR',
         '_LANG_TITLE' => '한국어',
         'SEARCH_PLACEHOLDER' => '검색...',
+        'CAT_LIST_TITLE_PLAIN' => '%s 아파트 목록',
+        'CAT_LIST_TITLE_SALE' => '%s 매매 아파트 목록',
+        'CAT_LIST_TITLE_RENT' => '%s 임대 아파트 목록',
+        'CAT_LIST_TITLE_TAG' => '아파트 목록',
     ];

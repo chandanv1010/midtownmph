@@ -26,22 +26,22 @@
 						<!-- mobile-tag-line -->
 						<div class="midtown-title">
 							<?php
-								if($detailCatalogue['id'] == 10 || $detailCatalogue['id'] == 18){
-									if($detailCatalogue['id'] == 10){
-										echo (request()->getLocale() == 'vi') ? 'Danh sách căn hộ '.$detailCatalogue['title'] : '';
-										echo (request()->getLocale() == 'tq') ? '待售公寓清单 Midtown' : '';
-										echo (request()->getLocale() == 'en') ? 'Listing of apartments for sale in Midtown' : '';
-									}
-									if($detailCatalogue['id'] == 18){
-										echo (request()->getLocale() == 'vi') ? 'Danh sách căn hộ '.$detailCatalogue['title'] : '';
-										echo (request()->getLocale() == 'tq') ? 'Midtown 出租公寓列表' : '';
-										echo (request()->getLocale() == 'en') ? 'Listing of apartments for rent in Midtown' : '';
-									}
-								}else{
-									echo (request()->getLocale() == 'vi') ? 'Danh sách căn hộ '.$detailCatalogue['title'] : '';
-									echo (request()->getLocale() == 'tq') ? '公寓清单'.$detailCatalogue['title'] : '';
-									echo (request()->getLocale() == 'en') ? 'listing of apartments '.$detailCatalogue['title'] : '';
+								/* Dung chung bo khoa voi catalogue/index.php.
+								 *
+								 * Ban cu la 9 dong echo liet ke tung ngon ngu, va rieng
+								 * tieng Anh/tieng Trung con viet cung chu "Midtown" vao
+								 * cau thay vi lay ten danh muc that - tieng Viet thi lay
+								 * dung ten. Nay ca ba deu lay ten that.
+								 *
+								 * Id 10 = ban, 18 = cho thue.
+								 */
+								$titleKey = 'app.CAT_LIST_TITLE_PLAIN';
+								if ($detailCatalogue['id'] == 10) {
+									$titleKey = 'app.CAT_LIST_TITLE_SALE';
+								} elseif ($detailCatalogue['id'] == 18) {
+									$titleKey = 'app.CAT_LIST_TITLE_RENT';
 								}
+								echo sprintf(lang($titleKey), $detailCatalogue['title']);
 							?>
 						</div>
 						<?php if (isset($children) && check_array($children)): ?>

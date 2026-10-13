@@ -92,4 +92,8 @@
         '_LANG_LABEL' => 'JP',
         '_LANG_TITLE' => '日本語',
         'SEARCH_PLACEHOLDER' => '検索...',
+        'CAT_LIST_TITLE_PLAIN' => '%sマンション一覧',
+        'CAT_LIST_TITLE_SALE' => '%s売買マンション一覧',
+        'CAT_LIST_TITLE_RENT' => '%s賃貸マンション一覧',
+        'CAT_LIST_TITLE_TAG' => 'マンション一覧',
     ];

@@ -9,7 +9,9 @@
 
 	$album = $object['album'];
 
-	$en_string = ($language == 'vi') ? '/ tháng'  : '/ month' ;
+	// Truoc day: ternary 'vi' => '/ tháng', con lai '/ month' - nen trang tieng
+	// Trung/Han/Nhat deu hien chu tieng Anh. Khoa PER da co du 5 ngon ngu.
+	$en_string = '/ ' . lang('app.PER');
 
 	$rating = dt_static_rating([
 		'module' => $this->data['module'],

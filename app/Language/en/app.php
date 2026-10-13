@@ -78,4 +78,8 @@
         '_LANG_LABEL' => 'EN',
         '_LANG_TITLE' => 'English',
         'SEARCH_PLACEHOLDER' => 'Search...',
+        'CAT_LIST_TITLE_PLAIN' => 'Listing of apartments %s',
+        'CAT_LIST_TITLE_SALE' => 'Listing of apartments for sale in %s',
+        'CAT_LIST_TITLE_RENT' => 'Listing of apartments for rent in %s',
+        'CAT_LIST_TITLE_TAG' => 'Listing of apartments',
     ];

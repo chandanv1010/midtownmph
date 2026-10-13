@@ -31,7 +31,17 @@ class FrontendController extends Controller
 		$this->general = get_general($this->locale);
 
 
-		setcookie('language', $this->locale, time() + (86400 * 30), "/"); // 86400 = 1 day
+		/* Da go setcookie('language', ...) o day.
+		 *
+		 * Ngon ngu nay xac dinh bang URL qua request()->getLocale() - xem
+		 * currentLanguage() ben duoi, phan doc cookie da duoc comment lai tu
+		 * truoc. Cookie chi con duoc GHI chu khong ai doc: da ra soat ca PHP
+		 * lan JavaScript, khong cho nao doc no.
+		 *
+		 * Giu lai con nguy hiem: setcookie() KHONG lam $_COOKIE co gia tri
+		 * trong chinh request do, nen bat ky doan code nao doc lai se nhan ve
+		 * ngon ngu cua lan tai trang TRUOC - sai mot nhip va rat kho tim.
+		 */
 
 		$currency = (isset($_COOKIE[AUTH_CURRENCY])) ? $_COOKIE[AUTH_CURRENCY] : '';
 

@@ -78,4 +78,8 @@
         '_LANG_LABEL' => '中文',
         '_LANG_TITLE' => 'China',
         'SEARCH_PLACEHOLDER' => '搜索...',
+        'CAT_LIST_TITLE_PLAIN' => '公寓清单%s',
+        'CAT_LIST_TITLE_SALE' => '待售公寓清单%s',
+        'CAT_LIST_TITLE_RENT' => '%s 出租公寓列表',
+        'CAT_LIST_TITLE_TAG' => '公寓上市',
     ];

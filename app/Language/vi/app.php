@@ -82,4 +82,16 @@
         '_LANG_LABEL' => 'VI',
         '_LANG_TITLE' => 'Tiếng Việt',
         'SEARCH_PLACEHOLDER' => 'Tìm kiếm...',
+
+        /* Tieu de danh sach can ho. %s la ten danh muc.
+         *
+         * Moi ngon ngu viet TRON CAU cua minh thay vi noi tung manh, vi thu tu
+         * tu khac nhau: tieng Viet dat hau to o cuoi, tieng Anh chen " in "
+         * giua, tieng Trung dat hau to len dau. Noi chuoi cung thu tu nhu truoc
+         * day thi khong the dung cho ca ba.
+         */
+        'CAT_LIST_TITLE_PLAIN' => 'Danh sách căn hộ %s',
+        'CAT_LIST_TITLE_SALE' => 'Danh sách căn hộ %s bán',
+        'CAT_LIST_TITLE_RENT' => 'Danh sách căn hộ %s cho thuê',
+        'CAT_LIST_TITLE_TAG' => 'Danh sách căn hộ',
     ];

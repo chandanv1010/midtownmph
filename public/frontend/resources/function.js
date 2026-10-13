@@ -138,19 +138,15 @@ $(document).ready(function(){
 
 
 
-	if($('.js_dt_language').length  > 0){
-		$('.js_dt_language a').on('click', function(){
-			let language = $(this).attr('data-language');
-			$.post('ajax/home/change_language',{
-				language : language
-			}, function(data){
-				// console.log(data);
-				// return false;
-                location.reload();
-            });
-			return false;
-		});
-	}
+	/* Da go khoi doi ngon ngu bang AJAX o day.
+	 *
+	 * No bind vao class '.js_dt_language', ma class do khong ton tai trong bat
+	 * ky markup nao - nut doi ngon ngu dung class 'dt_language'. Nen dieu kien
+	 * length > 0 luon sai va handler khong bao gio chay.
+	 *
+	 * Nut doi ngon ngu nay la the <a> thuong tro thang toi /<ma-ngon-ngu>/,
+	 * khong can JavaScript. Xem language_switcher() trong mydata_helper.php.
+	 */
 
 
 	$(document).on('click','.js_upload_file', function(){

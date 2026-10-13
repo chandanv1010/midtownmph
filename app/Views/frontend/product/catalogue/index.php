@@ -39,28 +39,24 @@
 		],
 		]);
 		// print_r($video_top); exit;
-			$text_title = '';
-			if(isset($breadcrumb[0]['id']) && $breadcrumb[0]['id'] == 10){
-				if(request()->getLocale() && request()->getLocale() == 'vi'){
-					$text_title = ' bán';
-				}
-				if(request()->getLocale() && request()->getLocale() == 'en'){
-					$text_title = ' for sale';
-				}
-				if(request()->getLocale() && request()->getLocale() == 'tq'){
-					$text_title = ' 待售';
-				}
-			}
-			if(isset($breadcrumb[0]['id']) && $breadcrumb[0]['id'] == 18){
-				if(request()->getLocale() && request()->getLocale() == 'vi'){
-					$text_title = ' cho thuê';
-				}
-				if(request()->getLocale() && request()->getLocale() == 'en'){
-					$text_title = ' for rent';
-				}
-				if(request()->getLocale() && request()->getLocale() == 'tq'){
-					$text_title = ' 出租';
-				}
+			/* Chon khoa tieu de theo loai danh muc.
+			 *
+			 * Truoc day cho nay la 6 cau if lien tiep, moi ngon ngu mot cau, de
+			 * ghep ra mot hau to (' bán' / ' for sale' / ' 待售') roi noi vao
+			 * chuoi o duoi. Cach do co hai van de: them ngon ngu moi la hau to
+			 * rong nen tieu de cut, va thu tu tu moi ngon ngu moi khac nen noi
+			 * chuoi cung mot kieu khong the dung cho ca ba.
+			 *
+			 * Nay moi ngon ngu viet tron cau trong app/Language/<ma>/app.php,
+			 * o day chi chon khoa nao. Id 10 = ban, 18 = cho thue (id cua danh
+			 * muc trong CSDL, giu nguyen nhu ban cu).
+			 */
+			$catalogueId = $breadcrumb[0]['id'] ?? 0;
+			$titleKey = 'app.CAT_LIST_TITLE_PLAIN';
+			if ($catalogueId == 10) {
+				$titleKey = 'app.CAT_LIST_TITLE_SALE';
+			} elseif ($catalogueId == 18) {
+				$titleKey = 'app.CAT_LIST_TITLE_RENT';
 			}
 		?>
 		<?php //echo view('frontend/homepage/common/breadcrumb') ?>
@@ -153,13 +149,9 @@
 							<?php endif ?>
 							<div class="midtown-title">
 								<?php if(isset($module) && $module == 'product_tag'){ ?>
-									<?php echo (request()->getLocale() == 'vi') ? 'Danh sách căn hộ ' : '' ?>
-									<?php echo (request()->getLocale() == 'en') ? 'Listing of apartments ' : '' ?>
-									<?php echo (request()->getLocale() == 'tq') ? '公寓上市' : '' ?>
+									<?php echo lang('app.CAT_LIST_TITLE_TAG') ?>
 								<?php }else{ ?>
-									<?php echo (request()->getLocale() == 'vi') ? 'Danh sách căn hộ '.$detailCatalogue['title'].$text_title : '' ?>
-									<?php echo (request()->getLocale() == 'en') ? 'Listing of apartments '.$text_title.' in '.$detailCatalogue['title'] : '' ?>
-									<?php echo (request()->getLocale() == 'tq') ? $text_title.'公寓清单'.$detailCatalogue['title'] : '' ?>
+									<?php echo sprintf(lang($titleKey), $detailCatalogue['title']) ?>
 								<?php } ?>
 							</div>
 							<div class="midtown-item-list">

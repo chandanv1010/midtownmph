@@ -202,11 +202,11 @@ class Dashboard extends FrontendController{
         }
     }
 
-    public function language(){
-        $keyword = $this->request->getPost('keyword');
-        setcookie('language', $keyword , time() + 1*24*3600, "/");
-        pre($keyword);
-    }
+    /* Da go public function language().
+     *
+     * Ham do ghi cookie 'language' roi goi pre() - mot ham debug in bien ra
+     * man hinh. Khong cho nao goi toi endpoint nay, va ngon ngu nay xac dinh
+     * bang URL chu khong bang cookie. */
 
     public function contact_tour(){
         $name = $this->request->getPost('name');

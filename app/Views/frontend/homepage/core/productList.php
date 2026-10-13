@@ -84,7 +84,9 @@ if(isset($productList) && is_array($productList) && count($productList)){ ?>
                                                     $rent_flag = 1;
                                                 }
                                             } ?>
-                                            <?php $en_string = ($language == 'vi') ? '/ tháng'  : '/ month' ?>
+                                            <?php /* Truoc day: ternary 'vi' => '/ tháng', con lai '/ month' - nen tieng
+                                                     Trung/Han/Nhat deu ra chu tieng Anh. Khoa PER da co du 5 ngon ngu. */ ?>
+                                            <?php $en_string = '/ ' . lang('app.PER') ?>
                                             <?php if(isset($rent_flag)){ ?>
                                                 <div class="title">
                                                     <?php echo dt_render_currency($price); ?> <?php echo (isset($rent_flag) && $rent_flag == 1 ) ? $en_string : ''; ?> 
