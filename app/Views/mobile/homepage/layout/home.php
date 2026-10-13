@@ -3,7 +3,7 @@
 	$widget['data'] = widget_frontend();
  ?>
 <!DOCTYPE html>
-<html lang="vi-VN">
+<html lang="<?php echo locale_tag() ?>">
 	<head>
 		<!-- CONFIG -->
 		<base href="<?php echo BASE_URL ?>" />
@@ -18,7 +18,7 @@
 		<title><?php echo isset($meta_title)?htmlspecialchars($meta_title):'';?></title>
 		<meta name="description"  content="<?php echo isset($meta_description)?htmlspecialchars($meta_description):'';?>" />
 		<?php echo isset($canonical)?'<link rel="canonical" href="'.$canonical.'" />':'';?>
-		<meta property="og:locale" content="vi_VN" />
+		<meta property="og:locale" content="<?php echo locale_tag(null, 'og') ?>" />
 
 		<!-- for Facebook -->
 		<meta property="og:title" content="<?php echo (isset($meta_title) && !empty($meta_title))?htmlspecialchars($meta_title):'';?>" />

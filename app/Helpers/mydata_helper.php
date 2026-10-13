@@ -1316,3 +1316,33 @@ if(!function_exists('upload_file')){
         return $_return;
     }
 }
+
+if (!function_exists('locale_tag')) {
+    /*
+     * Doi ma ngon ngu noi bo sang ma chuan BCP 47 cho the <html lang> va
+     * og:locale. Truoc day hai cho nay viet cung "vi-VN" / "vi_VN" trong
+     * layout, nen moi ngon ngu - ke ca ban tieng Anh dang chay that - deu
+     * khai bao voi trinh duyet va Google rang trang nay la tieng Viet.
+     *
+     * Luu y: ma noi bo 'kr','jp','tq' la ma QUOC GIA, khong phai ma ngon ngu.
+     * Ma ngon ngu dung chuan la 'ko','ja','zh'. Bang nay lam nhiem vu phien
+     * dich sang chuan, nho vay khong phai doi ma trong toan bo he thong.
+     *
+     * $style = 'html' -> 'ko-KR'   (dau gach ngang, cho thuoc tinh lang)
+     * $style = 'og'   -> 'ko_KR'   (dau gach duoi, cho og:locale)
+     */
+    function locale_tag(?string $locale = null, string $style = 'html'): string
+    {
+        $map = [
+            'vi' => 'vi-VN',
+            'en' => 'en-US',
+            'tq' => 'zh-CN',
+            'kr' => 'ko-KR',
+            'jp' => 'ja-JP',
+        ];
+        $locale = $locale ?: request()->getLocale();
+        $tag    = $map[$locale] ?? $map[config('App')->defaultLocale] ?? 'vi-VN';
+
+        return ($style === 'og') ? str_replace('-', '_', $tag) : $tag;
+    }
+}
