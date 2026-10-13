@@ -76,7 +76,29 @@ class App extends BaseConfig
 	| If false, no automatic detection will be performed.
 	|
 	*/
-	public $negotiateLocale = true;
+	/*
+	 * TAT tu dong do ngon ngu theo trinh duyet.
+	 *
+	 * Khi bat (true), CodeIgniter chon ngon ngu theo header Accept-Language cua
+	 * trinh duyet. Va khi header khong khop gi - hoac khach khong gui header,
+	 * nhu Googlebot va cac cong cu - no KHONG lui ve $defaultLocale ma lay
+	 * PHAN TU DAU TIEN cua $supportedLocales. Mang do bat dau bang 'en', nen
+	 * ten mien tran midtownpmh.com dang ra tieng Anh:
+	 *
+	 *     Negotiate::language()  ->  getBestMatch(..., $strictMatch = false)
+	 *     if (empty($header)) { return $supported[0]; }   // 'en'
+	 *
+	 * Tat di thi ngon ngu chi con phu thuoc URL, dung mot nghia:
+	 *     /          -> tieng Viet (theo $defaultLocale ben duoi)
+	 *     /en/ /kr/  -> van chay binh thuong, CodeIgniter.php dong 796-800
+	 *                   van lay locale tu doan {locale} cua duong dan.
+	 *
+	 * Doi lai: khach dung trinh duyet tieng Anh vao trang goc se thay tieng
+	 * Viet cho toi khi bam nut EN. Doi lay viec moi URL chi ung voi dung mot
+	 * ngon ngu - Google index dung, va cache/CDN khong con tra lan ngon ngu
+	 * (trang hien khong gui header Vary: Accept-Language).
+	 */
+	public $negotiateLocale = false;
 
 	/*
 	|--------------------------------------------------------------------------

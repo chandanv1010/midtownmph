@@ -603,21 +603,44 @@ if (! function_exists('language_switcher')){
 		// buoc nay thi mot hang thua trong bang `language` se sinh ra link 404.
 		$supported = config('App')->supportedLocales;
 
-		$html = '';
+		$html = [];
 		foreach ($languages as $row) {
 			$code = $row['canonical'] ?? '';
 			if ($code === '' || !in_array($code, $supported, true)) {
 				continue;
 			}
 
-			$html .= '<a href="' . base_url($code) . '"'
-				. ' title="' . esc(lang('app._LANG_TITLE', [], $code), 'attr') . '"'
+			/* KHONG dung lang('app.X', [], $code) o day.
+			 *
+			 * Trong CodeIgniter 4.0.5, Services::language($locale) lam the nay:
+			 *     return static::getSharedInstance('language', $locale)
+			 *                  ->setLocale($locale);
+			 * Tuc la no DOI LUON locale cua service dung chung va khong bao gio
+			 * khoi phuc. Vong lap nay duyet qua moi ngon ngu, nen sau khi chay
+			 * xong thi ca trang se hien bang ngon ngu CUOI CUNG trong danh sach
+			 * - trang tieng Viet bong hien tieng Nhat.
+			 *
+			 * Tham so thu hai 'false' tra ve mot doi tuong Language RIENG, doc
+			 * duoc chuoi cua ngon ngu khac ma khong dung toi service dung chung.
+			 */
+			$lang  = \Config\Services::language($code, false);
+			$label = $lang->getLine('app._LANG_LABEL');
+			$title = $lang->getLine('app._LANG_TITLE');
+
+			/* esc() ngu canh 'html' chu khong phai 'attr': ca hai deu an toan
+			 * trong dau nhay kep (deu ma hoa dau "), nhung 'attr' ma hoa ca chu
+			 * co dau thanh &#x1EBF; lam markup roi va khac ban goc. */
+			$html[] = '<a href="' . base_url($code) . '"'
+				. ' title="' . esc($title) . '"'
 				. ' class="' . (($code === $currentLocale) ? 'active' : '') . '">'
-				. esc(lang('app._LANG_LABEL', [], $code))
+				. esc($label)
 				. '</a>';
 		}
 
-		return $html;
+		// Noi bang xuong dong chu khong dinh lien: ban cu moi the <a> nam mot
+		// dong trong markup, trinh duyet hien cac nut cach nhau mot khoang
+		// trang. Noi khong co gi o giua thi ba nut dinh sat vao nhau.
+		return implode("\n", $html);
 	}
 }
 if (! function_exists('flag_by_code')){
