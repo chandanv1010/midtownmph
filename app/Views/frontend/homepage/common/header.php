@@ -34,7 +34,7 @@
 			<?php echo $mainNav ?>
 			<div class="hd-search-2">
 				<div class="button-search">
-					<a href="#my-id" data-uk-modal>Search</a>
+					<a href="#my-id" data-uk-modal><?php echo esc(lang('app.SEARCH_TITLE')) ?></a>
 					<button type="submit" class="btn-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</div>
 			</div>

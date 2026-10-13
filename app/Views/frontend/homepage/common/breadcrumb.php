@@ -1,7 +1,7 @@
 <section class="breadcrumb-panel">
     <div class="uk-container-center uk-container">
         <ul class="uk-breadcrumb uk-clearfix ">
-            <li class="breadcrumb-home"><a href=""> <i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-home"><a href=""> <i class="fa fa-home"></i> <?php echo esc(lang('app.HOME_LINK')) ?></a></li>
             <?php if(isset($breadcrumb) && is_array($breadcrumb) && count($breadcrumb)){
 				foreach ($breadcrumb as $key => $value) {
 			 ?>

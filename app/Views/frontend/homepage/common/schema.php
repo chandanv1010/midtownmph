@@ -1,6 +1,6 @@
 <?php
   helper('mydatafrontend');
-  $general = get_general();
+  $general = get_general(request()->getLocale());   // truoc day khong truyen ma ngon ngu nen luon lay ban tieng Viet
   // pre($general);
   if(isset($home)) {
 ?>

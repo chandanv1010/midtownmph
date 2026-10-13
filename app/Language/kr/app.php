@@ -95,4 +95,14 @@
         'CAT_LIST_TITLE_SALE' => '%s 매매 아파트 목록',
         'CAT_LIST_TITLE_RENT' => '%s 임대 아파트 목록',
         'CAT_LIST_TITLE_TAG' => '아파트 목록',
+
+        /* Chu cung truoc day nam thang trong view - gom ve day de 5 ngon ngu
+         * dung chung mot nguon. */
+        'BACK_TO_TOP' => '맨 위로',
+        'SEARCH_AREA_FROM' => '면적 최소',
+        'SEARCH_PRICE_FROM' => '가격 최소',
+        'QUANTITY' => '수량',
+        'ADD_TO_CART' => '장바구니에 담기',
+        'BRAND_PAGE' => '브랜드',
+        'SEARCH_TITLE' => '검색',
     ];

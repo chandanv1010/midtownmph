@@ -27,8 +27,8 @@
             <section class="breadcrumb-panel">
                 <!-- <div class="uk-container-center uk-container"> -->
                     <ul class="uk-breadcrumb uk-clearfix ">
-                        <li class="breadcrumb-home"><a href=""> <i class="fa fa-home"></i> Trang chủ</a></li>
-                        <li class=""><a href="<?php echo $_SERVER['REDIRECT_URL'] ?>" ><span><?php echo ($_SERVER['REDIRECT_URL'] == '/thuong-hieu.html') ? 'Thương hiệu' : 'Tìm kiếm' ?></span></a></li>
+                        <li class="breadcrumb-home"><a href=""> <i class="fa fa-home"></i> <?php echo esc(lang('app.HOME_LINK')) ?></a></li>
+                        <li class=""><a href="<?php echo $_SERVER['REDIRECT_URL'] ?>" ><span><?php echo ($_SERVER['REDIRECT_URL'] == '/thuong-hieu.html') ? lang('app.BRAND_PAGE') : lang('app.SEARCH_TITLE') ?></span></a></li>
                     </ul>
                 <!-- </div> -->
             </section>

@@ -96,4 +96,14 @@
         'CAT_LIST_TITLE_SALE' => '%s売買マンション一覧',
         'CAT_LIST_TITLE_RENT' => '%s賃貸マンション一覧',
         'CAT_LIST_TITLE_TAG' => 'マンション一覧',
+
+        /* Chu cung truoc day nam thang trong view - gom ve day de 5 ngon ngu
+         * dung chung mot nguon. */
+        'BACK_TO_TOP' => 'トップへ戻る',
+        'SEARCH_AREA_FROM' => '面積（下限）',
+        'SEARCH_PRICE_FROM' => '価格（下限）',
+        'QUANTITY' => '数量',
+        'ADD_TO_CART' => 'カートに入れる',
+        'BRAND_PAGE' => 'ブランド',
+        'SEARCH_TITLE' => '検索',
     ];

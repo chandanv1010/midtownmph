@@ -6,6 +6,7 @@
 	$language = request()->getLocale();
 	$video_top = get_slide(array(
 		'keyword' => 'video-sell',
+		'language' => $language,
 		'type' => '',
 		'output' => 'array',
 	));
@@ -165,7 +166,7 @@
 										</div>*/ ?>
 										<div class="right-side">
 											<a class="sort" title="" >
-												<?php echo FILTER_PRODUCT ?> <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+												<?php echo lang('app.FILTER_PRODUCT') ?> <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
 											</a>
 											<?php
 												$price_asc = 'filter=price|asc';
@@ -186,26 +187,26 @@
 											<ul class="sort-list">
 												<li class="uk-flex uk-flex-middle">
 													<input type="radio" id="low" name="filter" value="<?php echo $price_asc ?>" <?php echo $checked_price_asc ?>>
-													<label for="low" class="sort-item"><?php echo PRICE_ASC ?></label>
+													<label for="low" class="sort-item"><?php echo lang('app.PRICE_ASC') ?></label>
 												</li>
 												<li class="uk-flex uk-flex-middle">
 													<input type="radio" id="high" name="filter" value="<?php echo $price_desc ?>" <?php echo $checked_price_desc ?>>
-													<label for="high" class="sort-item"><?php echo PRICE_DESC ?></label>
+													<label for="high" class="sort-item"><?php echo lang('app.PRICE_DESC') ?></label>
 												</li>
 												<li class="uk-flex uk-flex-middle">
 													<input type="radio" id="new" name="filter" value="<?php echo $id_desc ?>" <?php echo $checked_id_desc ?>>
-													<label for="new" class="sort-item"><?php echo STATUS_ASC ?></label>
+													<label for="new" class="sort-item"><?php echo lang('app.STATUS_ASC') ?></label>
 												</li>
 												<li class="uk-flex uk-flex-middle">
 													<input type="radio" id="old" name="filter" value="<?php echo $id_asc ?>" <?php echo $checked_id_asc ?>>
-													<label for="old" class="sort-item"><?php echo STATUS_DESC ?></label>
+													<label for="old" class="sort-item"><?php echo lang('app.STATUS_DESC') ?></label>
 												</li>
 												<div class="btn-group uk-flex uk-flex-middle uk-flex-space-between">
 													<a href="<?php echo $actual_link ?>" title="" class="btn-pick">
-														<?php echo BTN_SELECT ?>
+														<?php echo lang('app.BTN_SELECT') ?>
 													</a>
 													<a title="" class="btn-cancel">
-														<?php echo BTN_CANCEL ?>
+														<?php echo lang('app.BTN_CANCEL') ?>
 													</a>
 												</div>
 											</ul>
@@ -363,7 +364,7 @@
 										<div class="form-group form_button_details margin-top-15">
 											<div class="form_product_content type1 ">
 												<div class="soluong soluong_type_1 show">
-													<label class="section margin-bottom-10">Số lượng:</label>
+													<label class="section margin-bottom-10"><?php echo esc(lang('app.QUANTITY')) ?>:</label>
 													<div class="custom input_number_product custom-btn-number form-control">
 														<button class="btn_num num_1 button button_qty" onclick="var result = document.getElementById('qtym_modal'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro > 1 ) result.value--;return false;" type="button">
 														<i class="fa fa-minus-circle"></i>
@@ -376,7 +377,7 @@
 												</div>
 												<div class="button_actions uk-clearfix">
 													<button type="submit" class="btn btn_base normal_button btn_add_cart btn-cart add_to_cart">
-													<span class="text_1"><i class="fa fa-shopping-basket"></i> Thêm vào giỏ hàng</span>
+													<span class="text_1"><i class="fa fa-shopping-basket"></i> <?php echo esc(lang('app.ADD_TO_CART')) ?></span>
 													</button>
 												</div>
 											</div>

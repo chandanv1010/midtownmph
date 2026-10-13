@@ -124,7 +124,7 @@ if(!function_exists('logo')){
             $http = 'https://';
         }
         $actual_link = $http."$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        $system = get_general();
+        $system = get_general($locale);   // truoc day bo trong nen logo alt/title luon ra tieng Viet
 
         /* Logo tro ve trang chu cua dung ngon ngu dang xem. Ngon ngu mac dinh
          * khong co tien to nen de rong, cac ngon ngu khac tro ve /<ma>/.

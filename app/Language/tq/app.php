@@ -82,4 +82,14 @@
         'CAT_LIST_TITLE_SALE' => '待售公寓清单%s',
         'CAT_LIST_TITLE_RENT' => '%s 出租公寓列表',
         'CAT_LIST_TITLE_TAG' => '公寓上市',
+
+        /* Chu cung truoc day nam thang trong view - gom ve day de 5 ngon ngu
+         * dung chung mot nguon. */
+        'BACK_TO_TOP' => '返回顶部',
+        'SEARCH_AREA_FROM' => '面积从',
+        'SEARCH_PRICE_FROM' => '价格从',
+        'QUANTITY' => '数量',
+        'ADD_TO_CART' => '加入购物车',
+        'BRAND_PAGE' => '品牌',
+        'SEARCH_TITLE' => '搜索',
     ];

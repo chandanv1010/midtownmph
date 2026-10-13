@@ -6,6 +6,7 @@
 	$language = request()->getLocale();
 	$video_top = get_slide(array(
 		'keyword' => 'video-sell',
+		'language' => $language,
 		'type' => '',
 		'output' => 'array',
 	));
@@ -82,7 +83,7 @@
 										<a href="<?php echo $href ?>" title="" class="dt_btn_viewall"><?php echo $general['home_view'] ?></a>
 									</div>
 									<?php else: ?>
-									<?php $empty = PRODUCT_UPDATE ?>
+									<?php $empty = lang('app.PRODUCT_UPDATE') ?>
 									<?php endif ?>
 									<seciton class="product_search_panel">
 									<?php echo $empty ?>

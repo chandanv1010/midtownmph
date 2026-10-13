@@ -125,8 +125,8 @@
 									<nav role="navigation" aria-label="breadcrumbs">
 										<ol class="breadcrumb uk-flex uk-list uk-clearfix" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 											<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-												<a href="/" title="<?php echo HOME_LINK ?>" itemprop="item">
-													<span itemprop="name"><?php echo HOME_LINK ?></span>
+												<a href="/" title="<?php echo lang('app.HOME_LINK') ?>" itemprop="item">
+													<span itemprop="name"><?php echo lang('app.HOME_LINK') ?></span>
 												</a>
 											</li>
 											<li class="pointer"> » </li>
@@ -142,7 +142,7 @@
 							</div>
 							<div class="uk-flex uk-flex-middle mb10">
 								<span class="rating fs20" data-stars="5" data-default-rating="<?php echo $average_point ?>" disabled="disabled"></span>
-								<div class="dt_rating_info"><?php echo $average_point ?>/5 - <?php echo $num_rate ?> <?php echo PRODUCT_RATE ?></div>
+								<div class="dt_rating_info"><?php echo $average_point ?>/5 - <?php echo $num_rate ?> <?php echo lang('app.PRODUCT_RATE') ?></div>
 							</div>
 							<div class="basic-infor-panel mb30">
 								<div class="heading mb20">
@@ -531,8 +531,8 @@
 						<form method="POST" action="" class="input-form" id="prd_detail_register">
 							<input type="text" name="product" class="uk-width-1-1 product uk-hidden" value="<?php echo $object['title'] ?>" placeholder="">
 							<input type="text" name="price" class="uk-width-1-1 price uk-hidden" value="<?php echo dt_render_currency($object['price']) ?>" placeholder="">
-							<input type="text" name="bed" class="uk-width-1-1 bed uk-hidden" value="<?php echo PRD_BED.$object['bed'] ?>" placeholder="">
-							<input type="text" name="area" class="uk-width-1-1 area uk-hidden" value="<?php echo PRD_AREA.$object['area'] ?>" placeholder="">
+							<input type="text" name="bed" class="uk-width-1-1 bed uk-hidden" value="<?php echo lang('app.PRD_BED').$object['bed'] ?>" placeholder="">
+							<input type="text" name="area" class="uk-width-1-1 area uk-hidden" value="<?php echo lang('app.PRD_AREA').$object['area'] ?>" placeholder="">
 
 
 							<div class="form-row">

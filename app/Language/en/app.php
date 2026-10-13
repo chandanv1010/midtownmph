@@ -82,4 +82,14 @@
         'CAT_LIST_TITLE_SALE' => 'Listing of apartments for sale in %s',
         'CAT_LIST_TITLE_RENT' => 'Listing of apartments for rent in %s',
         'CAT_LIST_TITLE_TAG' => 'Listing of apartments',
+
+        /* Chu cung truoc day nam thang trong view - gom ve day de 5 ngon ngu
+         * dung chung mot nguon. */
+        'BACK_TO_TOP' => 'Back to top',
+        'SEARCH_AREA_FROM' => 'Area from',
+        'SEARCH_PRICE_FROM' => 'Price from',
+        'QUANTITY' => 'Quantity',
+        'ADD_TO_CART' => 'Add to cart',
+        'BRAND_PAGE' => 'Brand',
+        'SEARCH_TITLE' => 'Search',
     ];

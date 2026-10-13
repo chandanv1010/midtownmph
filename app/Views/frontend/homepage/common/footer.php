@@ -277,7 +277,7 @@
     </div>
 </div> -->
 
-<a id="backtop" href="" title="Về đầu trang" style="bottom: 10px;"><i class="fa fa-angle-up"></i></a>
+<a id="backtop" href="" title="<?php echo esc(lang('app.BACK_TO_TOP')) ?>" style="bottom: 10px;"><i class="fa fa-angle-up"></i></a>
 <script>
     $(window).scroll(function() {
         if($(this).scrollTop() > 50) $('#backtop').stop().animate({ bottom: '150px' }, 200);

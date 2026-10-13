@@ -27,14 +27,14 @@
             <section class="breadcrumb-panel">
                 <!-- <div class="uk-container-center uk-container"> -->
                     <ul class="uk-breadcrumb uk-clearfix ">
-                        <li class="breadcrumb-home"><a href=""> <i class="fa fa-home"></i> Trang chủ</a></li>
-                        <li class=""><a href="<?php echo $_SERVER['REDIRECT_URL'] ?>" ><span><?php echo ($_SERVER['REDIRECT_URL'] == '/thuong-hieu.html') ? 'Thương hiệu' : 'Tìm kiếm' ?></span></a></li>
+                        <li class="breadcrumb-home"><a href=""> <i class="fa fa-home"></i> <?php echo esc(lang('app.HOME_LINK')) ?></a></li>
+                        <li class=""><a href="<?php echo $_SERVER['REDIRECT_URL'] ?>" ><span><?php echo ($_SERVER['REDIRECT_URL'] == '/thuong-hieu.html') ? lang('app.BRAND_PAGE') : lang('app.SEARCH_TITLE') ?></span></a></li>
                     </ul>
                 <!-- </div> -->
             </section>
             <section class="artcatalogue mb50">
                 <section class="search_panel search_product_panel">
-                    <div class="cat_heading_1 text-white bg_heading br6 mb20 db"><?php echo SEARCH_PRD ?></div>
+                    <div class="cat_heading_1 text-white bg_heading br6 mb20 db"><?php echo lang('app.SEARCH_PRD') ?></div>
                     <?php echo view('frontend/homepage/common/filter_product'); ?>
                     <?php 
                         $empty = '';
@@ -84,7 +84,7 @@
                                 <div class="form-group form_button_details margin-top-15">
                                     <div class="form_product_content type1 ">
                                         <div class="soluong soluong_type_1 show">
-                                            <label class="section margin-bottom-10">Số lượng:</label>
+                                            <label class="section margin-bottom-10"><?php echo esc(lang('app.QUANTITY')) ?>:</label>
                                             <div class="custom input_number_product custom-btn-number form-control">        
                                                 <button class="btn_num num_1 button button_qty" onclick="var result = document.getElementById('qtym_modal'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro > 1 ) result.value--;return false;" type="button">
                                                     <i class="fa fa-minus-circle"></i>
@@ -97,7 +97,7 @@
                                         </div>
                                         <div class="button_actions uk-clearfix">
                                             <button type="submit" class="btn btn_base normal_button btn_add_cart btn-cart add_to_cart">
-                                                <span class="text_1"><i class="fa fa-shopping-basket"></i> Thêm vào giỏ hàng</span>
+                                                <span class="text_1"><i class="fa fa-shopping-basket"></i> <?php echo esc(lang('app.ADD_TO_CART')) ?></span>
                                             </button>
                                         </div>
 

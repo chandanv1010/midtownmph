@@ -1,6 +1,7 @@
 <?php
     $slide = get_slide(array(
     	'keyword' => 'sslide',
+    	'language' => request()->getLocale(),   // truoc day bo trong nen luon lay slide tieng Viet
     	'type' => '',
     	'output' => 'array',
     ));

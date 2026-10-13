@@ -15,7 +15,7 @@
 			<div class="entry-description"><?php echo $object['content'] ?></div>
 
 			<section class="relate_art">
-				<div class="cat_heading_3 mb15"><?php echo PRJ_RELATE ?></div>
+				<div class="cat_heading_3 mb15"><?php echo lang('app.PRJ_RELATE') ?></div>
 				<?php if (isset($project_relate) && check_array($project_relate)): ?>
 				<section class="panel-body">
 					<?php 

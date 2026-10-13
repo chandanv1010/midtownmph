@@ -94,4 +94,14 @@
         'CAT_LIST_TITLE_SALE' => 'Danh sách căn hộ %s bán',
         'CAT_LIST_TITLE_RENT' => 'Danh sách căn hộ %s cho thuê',
         'CAT_LIST_TITLE_TAG' => 'Danh sách căn hộ',
+
+        /* Chu cung truoc day nam thang trong view - gom ve day de 5 ngon ngu
+         * dung chung mot nguon. */
+        'BACK_TO_TOP' => 'Về đầu trang',
+        'SEARCH_AREA_FROM' => 'Diện tích từ',
+        'SEARCH_PRICE_FROM' => 'Giá từ',
+        'QUANTITY' => 'Số lượng',
+        'ADD_TO_CART' => 'Thêm vào giỏ hàng',
+        'BRAND_PAGE' => 'Thương hiệu',
+        'SEARCH_TITLE' => 'Tìm kiếm',
     ];

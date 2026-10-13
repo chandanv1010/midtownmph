@@ -25,7 +25,7 @@
         <?php endif ?>
     </section>
     <section class="search_panel search_article_panel uk-hidden">
-        <div class="cat_heading_1 text-white bg_heading br6 mb20 db"><?php echo SEARCH_NEW ?></div>
+        <div class="cat_heading_1 text-white bg_heading br6 mb20 db"><?php echo lang('app.SEARCH_NEW') ?></div>
         <?php
             $empty = '';
          ?>

@@ -100,7 +100,7 @@
 				<div class="filter-title mr10"><?php echo $general['search_text_5'] ?>:</div>
 				<div class="uk-flex uk-flex-middle va-width-mobile">
 					<div class="form-row va-kc">
-						<input type="text" value="<?php echo (isset($_GET['area_from'])) ? $_GET['area_from'] : 0 ?>" name="area_from" class="input-text"  placeholder="Diện tích từ"> <?php echo $general['search_kc'] ?>
+						<input type="text" value="<?php echo (isset($_GET['area_from'])) ? $_GET['area_from'] : 0 ?>" name="area_from" class="input-text"  placeholder="<?php echo esc(lang('app.SEARCH_AREA_FROM')) ?>"> <?php echo $general['search_kc'] ?>
 					</div>
 					<div class="form-row ml5 va-kc">
 						 <input type="text" name="area_to" class="input-text" value="<?php echo (isset($_GET['area_to'])) ? $_GET['area_to'] : 0 ?>"  placeholder="-">
@@ -112,7 +112,7 @@
 				<div class="filter-title mr10"><?php echo $general['search_text_6'] ?> (<?php echo isset($currency['title']) ? $currency['title'] : 'USD' ?>):</div>
 				<div class="uk-flex uk-flex-middle va-width-mobile">
 					<div class="form-row va-kc">
-						<input type="text" name="price_from" class="input-text"  value="<?php echo (isset($_GET['price_from'])) ? $_GET['price_from'] : 0 ?>" placeholder="Giá từ"> <?php echo $general['search_kc'] ?>
+						<input type="text" name="price_from" class="input-text"  value="<?php echo (isset($_GET['price_from'])) ? $_GET['price_from'] : 0 ?>" placeholder="<?php echo esc(lang('app.SEARCH_PRICE_FROM')) ?>"> <?php echo $general['search_kc'] ?>
 					</div>
 					<div class="form-row ml5 va-kc">
 						 <input type="text" name="price_to" value="<?php echo (isset($_GET['price_to'])) ? $_GET['price_to'] : 0 ?>" class="input-text"  placeholder="-">
