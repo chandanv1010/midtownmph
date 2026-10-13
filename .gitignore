@@ -21,3 +21,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.log
+
+# File xac thuc SSL cua nha cap chung chi - doi moi lan gia han, thuoc ve server
+/.well-known/
