@@ -43,4 +43,10 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
     mod_gzip_item_exclude mime ^image/.*
     mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
 </ifModule>
-SetEnv CI_ENVIRONMENT development
+# Moi truong chay. Day la server that dang phuc vu khach nen phai la production:
+#   - development: in nguyen stack trace ra man hinh khi loi (lo duong dan,
+#     doan code, co khi ca cau SQL), chen comment DEBUG-VIEW lo duong dan file
+#     vao moi trang, va bat thanh debug toolbar.
+#   - production:  an loi khoi khach va ghi vao writable/logs thay the.
+# Khi dung ban local de sua code thi doi dong nay thanh development.
+SetEnv CI_ENVIRONMENT production
