@@ -16,8 +16,8 @@ class Contact extends FrontendController{
 
 		$module_extract = explode("_", $this->data['module']);
 
-        $this->data['meta_title'] = 'Contact us';
-        $this->data['meta_description'] = 'Liên hệ với chúng tôi, chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất';
+        $this->data['meta_title'] = lang('app.CONTACT_META_TITLE');
+        $this->data['meta_description'] = lang('app.CONTACT_META_DESC');
         $this->data['canonical'] = BASE_URL.'contact-us'.HTSUFFIX;
         $this->data['meta_image'] = $this->general['homepage_logo'];
 			$this->data['slide_company'] = get_slide([

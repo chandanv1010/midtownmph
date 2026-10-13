@@ -92,4 +92,11 @@
         'ADD_TO_CART' => 'Add to cart',
         'BRAND_PAGE' => 'Brand',
         'SEARCH_TITLE' => 'Search',
+        /* Meta cho trang lien he va cac trang tim kiem - truoc day viet cung
+         * tieng Viet trong controller nen moi ngon ngu deu ra tieng Viet. */
+        'CONTACT_META_TITLE' => 'Contact us',
+        'CONTACT_META_DESC' => 'Contact us and we will get back to you as soon as possible',
+        'SEARCH_RESULT' => 'Search results',
+        'SEARCH_PROPERTY' => 'Property search',
+        'SEARCH_BY_TAG' => 'Search by tags',
     ];

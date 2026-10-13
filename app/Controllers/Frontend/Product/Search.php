@@ -161,7 +161,7 @@ class Search extends FrontendController{
                 ],
             'where' => ['tb1.deleted_at' => 0]
         ],true);
-        $this->data['meta_title'] = 'Tìm kiếm bất động sản';
+        $this->data['meta_title'] = lang('app.SEARCH_PROPERTY');
         $this->data['general'] = $this->general;
         $this->data['meta_image'] =  $this->general['homepage_logo'];
         $this->data['product'] = $product;

@@ -92,4 +92,11 @@
         'ADD_TO_CART' => '加入购物车',
         'BRAND_PAGE' => '品牌',
         'SEARCH_TITLE' => '搜索',
+        /* Meta cho trang lien he va cac trang tim kiem - truoc day viet cung
+         * tieng Viet trong controller nen moi ngon ngu deu ra tieng Viet. */
+        'CONTACT_META_TITLE' => '联系我们',
+        'CONTACT_META_DESC' => '联系我们，我们会尽快与您联系',
+        'SEARCH_RESULT' => '搜索结果',
+        'SEARCH_PROPERTY' => '房产搜索',
+        'SEARCH_BY_TAG' => '按标签搜索',
     ];

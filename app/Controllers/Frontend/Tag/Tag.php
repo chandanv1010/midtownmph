@@ -95,8 +95,8 @@ class Tag extends FrontendController{
             ], TRUE);
             // pre($this->data['productList']);
         }
-        $this->data['meta_title'] = 'Tìm kiếm theo Tags';
-        $this->data['meta_description'] = 'Tìm kiếm theo Tags';
+        $this->data['meta_title'] = lang('app.SEARCH_BY_TAG');
+        $this->data['meta_description'] = lang('app.SEARCH_BY_TAG');
         $this->data['meta_image'] = !empty( $this->data['detailCatalogue']['image'])?base_url( $this->data['detailCatalogue']['image']):'';
 
         if(!isset($this->data['canonical']) || empty($this->data['canonical'])){

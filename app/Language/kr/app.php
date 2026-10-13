@@ -105,4 +105,11 @@
         'ADD_TO_CART' => '장바구니에 담기',
         'BRAND_PAGE' => '브랜드',
         'SEARCH_TITLE' => '검색',
+        /* Meta cho trang lien he va cac trang tim kiem - truoc day viet cung
+         * tieng Viet trong controller nen moi ngon ngu deu ra tieng Viet. */
+        'CONTACT_META_TITLE' => '문의하기',
+        'CONTACT_META_DESC' => '문의해 주시면 최대한 빠르게 연락드리겠습니다',
+        'SEARCH_RESULT' => '검색 결과',
+        'SEARCH_PROPERTY' => '부동산 검색',
+        'SEARCH_BY_TAG' => '태그로 검색',
     ];

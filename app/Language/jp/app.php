@@ -106,4 +106,11 @@
         'ADD_TO_CART' => 'カートに入れる',
         'BRAND_PAGE' => 'ブランド',
         'SEARCH_TITLE' => '検索',
+        /* Meta cho trang lien he va cac trang tim kiem - truoc day viet cung
+         * tieng Viet trong controller nen moi ngon ngu deu ra tieng Viet. */
+        'CONTACT_META_TITLE' => 'お問い合わせ',
+        'CONTACT_META_DESC' => 'お問い合わせいただければ、できるだけ早くご連絡いたします',
+        'SEARCH_RESULT' => '検索結果',
+        'SEARCH_PROPERTY' => '物件検索',
+        'SEARCH_BY_TAG' => 'タグで検索',
     ];

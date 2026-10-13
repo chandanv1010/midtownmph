@@ -104,4 +104,11 @@
         'ADD_TO_CART' => 'Thêm vào giỏ hàng',
         'BRAND_PAGE' => 'Thương hiệu',
         'SEARCH_TITLE' => 'Tìm kiếm',
+        /* Meta cho trang lien he va cac trang tim kiem - truoc day viet cung
+         * tieng Viet trong controller nen moi ngon ngu deu ra tieng Viet. */
+        'CONTACT_META_TITLE' => 'Liên hệ',
+        'CONTACT_META_DESC' => 'Liên hệ với chúng tôi, chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất',
+        'SEARCH_RESULT' => 'Kết quả tìm kiếm',
+        'SEARCH_PROPERTY' => 'Tìm kiếm bất động sản',
+        'SEARCH_BY_TAG' => 'Tìm kiếm theo Tags',
     ];

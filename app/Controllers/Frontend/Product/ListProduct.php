@@ -36,8 +36,8 @@ class ListProduct extends FrontendController{
         $this->data['articleList'] = $articleList;
         $this->data['productList'] = $productList;
             
-        $this->data['meta_title'] = 'Tìm kiếm';
-        $this->data['meta_description'] = 'Kết quả tìm kiếm';
+        $this->data['meta_title'] = lang('app.SEARCH_TITLE');
+        $this->data['meta_description'] = lang('app.SEARCH_RESULT');
         $this->data['og_type'] = 'website';
         $this->data['meta_image'] =  $this->general['homepage_logo'];
 
