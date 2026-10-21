@@ -159,7 +159,22 @@ class Search extends FrontendController{
                         'product_translate as tb2','tb1.id = tb2.objectid AND tb2.module = "product_tag" AND tb2.language = \''.$this->currentLanguage().'\' ','inner'
                     ]
                 ],
-            'where' => ['tb1.deleted_at' => 0]
+            'where' => ['tb1.deleted_at' => 0],
+            /*
+             * PHAI co order_by.
+             *
+             * Khong co thi MySQL tra ve theo thu tu nao tuy no, va thu tu do
+             * DOI GIUA CAC LAN TAI TRANG. Do duoc tren trang that: goi /kr/
+             * bon lan lien tiep thi hai muc "shophouse" va "penthouse" doi
+             * cho nhau o lan thu hai.
+             *
+             * Hai the product_tag deu co `order` = 0 nen khong co gi phan
+             * dinh; them `tb1.id` lam tieu chi phu de thu tu co dinh.
+             *
+             * Dung cung quy uoc voi cho khac trong ma nguon:
+             * mypanel_helper.php dong 363 va 413.
+             */
+            'order_by' => 'tb1.order desc, tb1.id asc',
         ],true);
         $this->data['meta_title'] = lang('app.SEARCH_PROPERTY');
         $this->data['general'] = $this->general;
