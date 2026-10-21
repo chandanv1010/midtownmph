@@ -43,7 +43,17 @@
                         }
                     ?>
                     <?php
-                        $extract_album = json_decode($object['extract_album'], true);
+                        /*
+                         * Phai co ?: [] o day.
+                         *
+                         * Chi 6 bai trong toan bo CSDL co du lieu album. Bai nao
+                         * khong co thi json_decode tra ve null, va foreach(null)
+                         * la loi chi mang - ca trang tra ve 500.
+                         *
+                         * Do la nguyen nhan cua 52 trang trang tren ban that, trong
+                         * do co toan bo trang mat bang va du an.
+                         */
+                        $extract_album = json_decode($object['extract_album'] ?? '', true) ?: [];
                     ?>
                     <?php
                         

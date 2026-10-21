@@ -122,21 +122,61 @@ if (! function_exists('panel_catalogue')){
 
 
 if (! function_exists('recursive')){
-    function recursive($array = '', $parentid = 0){
+    /*
+     * Dung cay danh muc tu mang phang.
+     *
+     * Ban cu co mot vong lap long ben trong: moi lan them MOT nut vao $temp,
+     * no duyet lai TOAN BO $temp va tinh lai `children` cho tat ca nhung nut
+     * da them truoc do.
+     *
+     *     $temp[] = $val;
+     *     foreach($temp as $keyTemp => $valTemp){          // duyet lai tu dau
+     *         $temp[$keyTemp]['children'] = recursive(...); // tinh lai ca cay con
+     *     }
+     *
+     * Ket qua cuoi cung khong khac gi, nhung khoi luong tinh toan phinh theo
+     * cap so: nut thu i phai tinh lai i cay con, va dieu do lap lai o tung
+     * tang. Tren du lieu that no an het 128MB bo nho roi chet - do la nguyen
+     * nhan 23 trang (project_catalogue, media_catalogue) tra ve 500 ma KHONG
+     * ghi duoc gi vao nhat ky, vi PHP chet truoc khi CodeIgniter kip ghi.
+     *
+     * Ban nay tinh `children` dung mot lan cho dung nut vua tim thay.
+     */
+    function recursive($array = '', $parentid = 0, array $daQua = []){
         $temp = [];
-        if(isset($array) && is_array($array) && count($array)){
-            foreach($array as $key => $val){
-                if($val['parentid'] == $parentid){
-                    $temp[] = $val;
-                    if(isset($temp) && is_array($temp) && count($temp)){
-                        foreach($temp as $keyTemp => $valTemp){
-                            $temp[$keyTemp]['children'] = recursive($array, $valTemp['id']);
-                        }
-                    }
 
-                }
-            }
+        if(!(isset($array) && is_array($array) && count($array))){
+            return $temp;
         }
+
+        foreach($array as $key => $val){
+            if($val['parentid'] != $parentid){
+                continue;
+            }
+
+            /*
+             * Chan vong lap cha-con.
+             *
+             * Bang `project_catalogue` co ba dong tu lam cha chinh minh
+             * (id = parentid = 5, 6, 7). Gap dong do thi recursive() goi lai
+             * chinh no voi cung mot parentid, khong bao gio dung, va an het
+             * 128MB roi chet - PHP tat truoc khi CodeIgniter kip ghi nhat ky,
+             * nen trang tra ve 500 rong khong mot dau vet.
+             *
+             * Do la nguyen nhan 23 trang project_catalogue/media_catalogue
+             * trang tren ca ban that.
+             *
+             * Sua du lieu thi het, nhung chan o day de MOT dong hong trong
+             * CSDL khong con dan den sap ca trang.
+             */
+            if(in_array($val['id'], $daQua, true)){
+                continue;
+            }
+
+            $val['children'] = recursive($array, $val['id'], array_merge($daQua, [$val['id']]));
+            $temp[] = $val;
+        }
+
         return $temp;
     }
 }
